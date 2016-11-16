@@ -1,0 +1,80 @@
+	%%% Jorge Salazar
+	%%% Professor R. Wyatt
+	%%% CSC 345 Paradigms
+	%%% ML Homework 
+	%%% November 11, 2016 
+
+	%%% This file has been annotated. All annotations with %%%
+
+	%%% Loading file smlHW.sml
+	%%% ----------------------------------------------------------------------
+
+	Standard ML of New Jersey v110.76 [built: Tue Oct 22 14:04:11 2013]
+	- [opening /tmp/sml3707AVd]
+	val flip = fn : 'a list -> 'a list
+	val deleteIth = fn : 'a list * int -> 'a list
+	[autoloading]
+	[library $SMLNJ-BASIS/basis.cm is stable]
+	[autoloading done]
+	val vowelCheck = fn : char list -> bool
+	val beginsWithVowel = fn : string -> bool
+	val moveToVowel = fn : char list -> string
+	val piglatinize = fn : string -> string
+	
+	%%% Running Tests
+	
+	%%% ----------------------------------------------------------------------
+	%%% Question 1: flip function
+	
+	flip with even number of elements 
+	flip [1,2,3,4,5,6]; 
+	val it = [2,1,4,3,6,5] : int list
+	
+	flip with odd number of elements 
+	flip [1.1,2.2,3.3,4.4,5.5]; 
+	val it = [2.2,1.1,4.4,3.3,5.5] : real list
+	
+	%%% ----------------------------------------------------------------------
+	%%% Question 2: deleteIth function
+	
+	deleteIth with the ith symbol < the list's length 
+	deleteIth ([#"a", #"b", #"c", #"d"],3); 
+	val it = [#"a",#"b",#"d"] : char list
+	
+	deleteIth with the ith symbol > the list's length 
+	deleteIth ([1,2,3,4,5,6], 7); 
+	val it = [1,2,3,4,5,6] : int list
+	
+	deleteIth with the ith symbol is a negative number 
+	deleteIth (["one","two","three"], ~2); 
+	val it = ["one","two","three"] : string list
+	
+	%%% ----------------------------------------------------------------------
+	%%% Question 3: beginsWithVowel
+	
+	beginsWithVowel with lowercase vowel as first letter 
+	beginsWithVowel "apple"; 
+	val it = true : bool
+	
+	beginsWithVowel with uppercase vowel as first letter 
+	beginsWithVowel "Orange"; 
+	val it = true : bool
+	
+	beginsWithVowel with consonant as first letter 
+	beginsWithVowel "hello"; 
+	val it = false : bool
+	
+	%%% ----------------------------------------------------------------------
+	%%% Question 4: piglatinize function
+	
+	piglatinize with vowel as first letter 
+	piglatinize "able"; 
+	val it = "ableyay" : string
+	
+	piglatinize with consonant as first letter 
+	piglatinize "stripe"; 
+	val it = "ipestray" : string
+	val it = () : unit
+	- 
+	
+	%%% End
